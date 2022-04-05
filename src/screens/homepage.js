@@ -6,17 +6,22 @@ import moment from 'moment-timezone'
 export default function Homepage() {
   const [hits, setHits] = useState("");
   const [inputsearch, setInputsearch] = useState("")
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function getresponse() {
+      setLoading(true)
       await axios
         .get("https://hn.algolia.com/api/v1/search?query=test")
         .then(async (res) => {
           const sorted = res.data.hits.sort((a,b) => ( (new Date(moment.parseZone(b.created_at).format("DD-MMM-YYYY"))) - ( new Date(moment.parseZone(a.created_at).format("DD-MMM-YYYY"))) ) )
-          //console.log(sorted)
+          setLoading(false)
           setHits(sorted);
         })
-        .catch((err) => console.log(err));
+        .catch((err) =>{
+          setLoading(false)
+          console.log(err)
+        });
     }
     getresponse();
   }, []);
@@ -35,12 +40,22 @@ export default function Homepage() {
  
 
   return (
-    <div>
+    <div>  
+      <div> 
       <div className="search-container mb-5">
         <input placeholder="Search Stories" onChange={(e)=>setInputsearch(e.target.value)} className="search my-3" />
         <Button style={{ backgroundColor: "red" }}> submit </Button>
       </div>
-      <div>
+    {  loading ? (
+        <div
+        style={{textAlign:'center'}}
+        >
+          <img
+            src="https://media1.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
+            alt="loading"
+          />
+        </div>
+      ) : (<div>
         <Container>
           <Row >
             {hits &&
@@ -59,6 +74,7 @@ export default function Homepage() {
               ))}
           </Row>
         </Container>
+      </div>)}
       </div>
     </div>
   );
