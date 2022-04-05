@@ -1,0 +1,128 @@
+.main-title{
+    padding: 5px;
+    border: 3px solid red;
+    border-radius: 5px;
+    box-shadow: 5px 5px red;
+    background-color: #ffff;
+}
+
+
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;   
+  }
+
+.childrens{
+   background-color: antiquewhite;
+   border-radius: 5px;
+   height: 50%;
+}
+
+.child{
+    display: none;
+}
+
+i{
+    margin:5px
+}
+
+ul{
+    list-style-type: none;
+}
+
+.brand-container{
+    position: relative;
+}
+
+.tags{
+    margin: 5px;
+    padding: 5px;
+    color: rgb(242, 63, 45);
+    background-color: rgb(255, 245, 244);
+    border-radius: 15px;
+}
+
+.navbar{
+    display: flex;
+    margin: 0 auto;
+    font-family: "PT Sans", sans-serif;
+}
+
+span{
+    margin: 0 25px;
+    font-size: 16px;
+}
+
+.sub-title :hover{
+    background-color: rgb(248, 246, 246);
+    padding: 10px;
+}
+
+
+.search-container{
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background-image: url(https://images.yourstory.com/assets/images/profile_banner_bg_portrait.svg);
+   background-color: rgb(62, 72, 91);
+   position: relative;
+   background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    min-height: 8rem;
+}
+
+.search{
+    background: url(https://yourstory.com/icons/assets/icon_search_grey.svg) 0.8rem center / auto 40% no-repeat rgb(255, 255, 255);
+    width: 75%;
+    height: 2.5rem;
+    padding: 2px 1rem 0px 2.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    appearance: none;
+    border: 0.0625rem solid rgb(221, 221, 221);
+    box-shadow: none;
+    
+}
+
+.comments{
+    text-decoration: none;
+}
+
+/* .comments :hover{
+    background-color: red;
+    text-decoration: underline;
+}  */
+
+.card:hover{
+    transform:scale(1.04);
+}
+/* .cards :hover{    
+    transform: scale3d(1.006, 1.006, 1);
+} */
+
+.title :hover{
+    font-weight: bold;
+}
+
+.vr{
+    height: 5rem;
+    border-left: 2px solid grey;
+    width:3px;
+}
+
+@media only screen and (max-width: 360px) {
+
+    .container { 
+       width: 320px; 
+    }
+ 
+ }
