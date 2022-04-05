@@ -1,12 +1,10 @@
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
-//import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
 import moment from 'moment-timezone'
 
 export default function Homepage() {
   const [hits, setHits] = useState("");
-  const [imgdata, setImgadata] = useState("");
   const [inputsearch, setInputsearch] = useState("")
 
   useEffect(() => {

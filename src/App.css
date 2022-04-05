@@ -6,8 +6,6 @@
     background-color: #ffff;
 }
 
-
-
 .center {
     display: flex;
     flex-direction: column;
@@ -97,17 +95,11 @@ span{
     text-decoration: none;
 }
 
-/* .comments :hover{
-    background-color: red;
-    text-decoration: underline;
-}  */
 
 .card:hover{
     transform:scale(1.04);
 }
-/* .cards :hover{    
-    transform: scale3d(1.006, 1.006, 1);
-} */
+
 
 .title :hover{
     font-weight: bold;

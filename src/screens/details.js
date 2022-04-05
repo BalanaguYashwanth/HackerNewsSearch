@@ -34,14 +34,12 @@ export default function Details() {
 
   function close(operation, id) {
     setClick(!click);
-    //console.log(operation);
     if (operation === "push") {
       SetToggleid([...toggleid, id]);
     } else if (operation === "pop") {
       const result = toggleid.filter((tid) => tid != id);
       SetToggleid(result);
     }
-    //console.log("toggle", toggleid);
   }
 
   return (
