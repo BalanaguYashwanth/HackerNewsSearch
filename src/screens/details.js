@@ -64,8 +64,13 @@ export default function Details() {
             {datas &&
               datas.children.slice(0, limit).map((child, index) => (
                 <div key={index}  className="my-3">
+
+               { 
+                child.text && <div> 
                 <img src={'https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg'} height='25' width='25'/> By <strong> {child.author} </strong>
                   <Interweave className="m-0" content={child.text} />
+                </div>  
+                }
                   
                   { toggleid.includes(child.id) ? (
                     <div>
@@ -103,7 +108,7 @@ export default function Details() {
                       )}
                     </div>
                   )}
-                  {<hr />}
+                 {  child.text && (<hr />)}
                 </div>
               ))}
 
